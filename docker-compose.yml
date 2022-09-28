@@ -1,0 +1,16 @@
+version: "3"
+
+services:     
+  django:
+    container_name: django
+    build: django
+    command: python manage.py runserver 0.0.0.0:80
+    volumes:
+      - ./django:/app
+    ports:
+      - "80:80"
+  angular:
+    container_name: angular
+    build: angular
+    ports:
+      - "8080:80"
